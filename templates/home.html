@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Loan Eligibility Prediction</title>
+</head>
+<body>
+    <h1>Car Loan Eligibility Prediction</h1>
+
+    <!-- Form to input data for prediction -->
+    <form action="/predictdata" method="POST">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" step="0.1" required><br><br>
+
+        <label for="gender">Gender (1 for Male, 0 for Female):</label>
+        <input type="number" id="gender" name="gender" step="1" required><br><br>
+
+        <label for="income">Income:</label>
+        <input type="number" id="income" name="income" step="0.01" required><br><br>
+
+        <label for="credit_score">Credit Score:</label>
+        <input type="number" id="credit_score" name="credit_score" step="0.1" required><br><br>
+
+        <label for="credit_history">Credit History Length (in years):</label>
+        <input type="number" id="credit_history" name="credit_history" step="0.1" required><br><br>
+
+        <label for="existing_loans">Number of Existing Loans:</label>
+        <input type="number" id="existing_loans" name="existing_loans" step="1" required><br><br>
+
+        <label for="loan_amount">Loan Amount:</label>
+        <input type="number" id="loan_amount" name="loan_amount" step="0.01" required><br><br>
+
+        <label for="loan_tenure">Loan Tenure (in years):</label>
+        <input type="number" id="loan_tenure" name="loan_tenure" step="0.1" required><br><br>
+
+        <label for="ltv_ratio">LTV Ratio:</label>
+        <input type="number" id="ltv_ratio" name="ltv_ratio" step="0.01" required><br><br>
+
+        <label for="Employment Pofile">Employment Profile:</label>
+        <input type="number" id="employment_profile" name="employment_profile" step="0.01" required><br><br>
+
+        </select><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    <!-- Display the prediction result if available -->
+    {% if results %}
+        <h2>Prediction Result</h2>
+        <p>The predicted car loan eligibility score is: <strong>{{ results }}</strong></p>
+    {% else %}
+        <p>Please fill out the form to get a prediction.</p>
+    {% endif %}
+
+</body>
+</html>
+
+
+    
